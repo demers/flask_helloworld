@@ -1,7 +1,7 @@
 version: '2.1'
 
 services:
-  vim:
+  helloworld:
     build: .
     container_name: flask_helloworld
     restart: always
