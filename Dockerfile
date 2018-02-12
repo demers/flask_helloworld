@@ -6,12 +6,18 @@ ENV WORKDIRECTORY /root
 
 RUN apt-get update
 
-RUN apt install -y python3 python3-setuptools
+RUN apt install -y python3 python3-pip
 
-RUN easy_install3 pip \
-    && pip install --upgrade pip
+# Version Ubuntu 12.04 LTS...
+#RUN apt install -y python3-setuptools
+#RUN easy_install3 pip \
+    #&& pip install --upgrade pip
 
-RUN pip install --user flask
+# Mise à jour PIP
+RUN pip3 install --upgrade pip
+
+# Installation Flask
+RUN pip3 install --user flask
 
 WORKDIR ${WORKDIRECTORY}
 
